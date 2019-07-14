@@ -1,0 +1,9 @@
+<h1> List of all Events is:  </h1>
+
+<ul >
+  <% @events.each do |event| %>
+    <li>
+      <%= event.event_description  %>
+    </li>
+  <% end %>
+</ul>
