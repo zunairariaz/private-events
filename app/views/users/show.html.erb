@@ -1,17 +1,69 @@
 <h1>  <center> Show Page  </center> 
 <%= @user.user_name%>
 
-</h2> List of all events created by this user is: </h2>
+<h2> List of all events created by this user is: </h2>
 
 <ul >
   <% @user.events.each do |event| %>
     <li>
       <%= event.event_description  %> <%= event.event_date  %> 
     </li>
-
-
   <% end %>
 </ul>
+ 
+
+ <h2> List of all events this user is going to attend: </h2>
+
+<ul >
+  <% @user.attended_events.each do |a_event| %>
+    <li>
+      <%= a_event.event_description  %> <%= a_event.event_date %> 
+    </li>
+  <% end %>
+</ul>
+
+
+ <h2> Past Events attended by user: </h2> 
+
+<ul >
+  <% @past_events.each do |event| %>
+	<li>
+	<%= event.event_description  %> <%= event.event_date %>    
+    </li>
+  <% end %>
+</ul>
+
+
+ <h2> UpComing Events user is going to attend: </h2>
+<ul >
+  <% @upcoming_events.each do |event| %>
+   <li>
+	<%= event.event_description  %> <%= event.event_date %>    
+    </li>
+  <% end %>
+</ul>
+
+
+ <h2>All Past Events: </h2>
+
+<ul >
+  <% @past_events_all.each do |event| %>
+	<li>
+	<%= event.event_description  %> <%= event.event_date %>    
+    </li>
+  <% end %>
+</ul>
+
+
+<h2>All UpComing Events: </h2>
+<ul >
+  <% @upcoming_events_all.each do |event| %>
+   <li>
+	<%= event.event_description  %> <%= event.event_date %>    
+    </li>
+  <% end %>
+</ul>
+
 
 
 
