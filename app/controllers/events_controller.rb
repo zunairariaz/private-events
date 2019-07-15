@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 include EventsHelper
 	def index
 		@events= Event.all
+		@user = User.find(session[:id])
 	end
 
 	
@@ -22,5 +23,11 @@ include EventsHelper
 	def show
 		@event=Event.find(params[:id])
 		@attendents=@event.attendents
+	end
+
+	def event_attend
+		@event=Event.find(params[:attended_event_id])
+        @attendent= @event.event_attendings.new(attendent_id: params[:id])
+        @attendent.save
 	end
 end
