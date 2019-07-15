@@ -1,5 +1,21 @@
 <h1>  <center> Show Page  </center> 
 <%= @user.user_name%>
+</h1> </center>
+
+<ul>
+	<li>  <%=link_to "Add an Event" , new_event_path %>  </li>
+	<li>  <%=link_to "Show All Events" , events_path %>  </li>
+	<li> <%=link_to "Logout", "/login" %> </li>
+</ul>
+
+
+
+
+
+
+
+
+
 
 <h2> List of all events created by this user is: </h2>
 
@@ -65,16 +81,6 @@
 </ul>
 
 
-
-
-
-
-
 </br>
- <%=link_to "Add an Event" , new_event_path %> </br></br>
- <%=link_to "Show All Events" , events_path %> </br></br>
+ 
 
-
-
-
-<%=link_to "Logout", "/login" %>
