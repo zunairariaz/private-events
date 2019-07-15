@@ -21,5 +21,6 @@ include EventsHelper
 	
 	def show
 		@event=Event.find(params[:id])
+		@attendents=@event.attendents
 	end
 end
