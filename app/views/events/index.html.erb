@@ -3,7 +3,7 @@
 <ul >
   <% @events.each do |event| %>
     <li>
-      <%= event.event_description  %>
+      <%= event.event_description  %> <%= event.event_date  %>
     </li>
   <% end %>
 </ul>

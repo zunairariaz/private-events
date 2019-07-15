@@ -3,9 +3,10 @@
 
 
 <%= form_for @event do |f| %>
-<%= f.label :event_name %>
-<%= f.text_field :event_name %> </br> </br>  
+<%= f.label :event_date %>
+<%= f.date_field :event_date %> </br> </br> 
 <%= f.label :event_description %>
 <%= f.text_area :event_description %> </br> </br> 
 <%= f.submit "Create"%></br></br>
+
 <%end %> 

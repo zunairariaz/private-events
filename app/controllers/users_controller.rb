@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 	include UsersHelper
+	def user_params
+		params.require(:user).permit(:user_name)
+	end
+
+
+
 	def index
-		@user=User.all
+		@users=User.all
 	end
 
 	def new
@@ -12,7 +18,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		@user.save
-		redirect_to "/login"
+		redirect_to "/login"	
 	end
 	 
 	 def show

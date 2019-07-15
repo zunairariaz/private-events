@@ -1,6 +1,17 @@
 <h1>  <center> Show Page  </center> 
 <%= @user.user_name%>
-</h1>
+
+</h2> List of all events created by this user is: </h2>
+
+<ul >
+  <% @user.events.each do |event| %>
+    <li>
+      <%= event.event_description  %> <%= event.event_date  %> 
+    </li>
+
+
+  <% end %>
+</ul>
 
 
 
@@ -14,4 +25,4 @@
 
 
 
-<%=link_to "Logout" , "/login" %>
+<%=link_to "Logout", "/login" %>
