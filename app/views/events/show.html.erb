@@ -2,8 +2,6 @@
 
 <p>
 	<%= @event.event_description %>
-
-
 	<ul >
     <%@attendents.each do |attendent| %>
     <li>
@@ -11,6 +9,6 @@
     </li>
     <% end %>
 	</ul>
+</p> </br></br></br>
 
-</p>
-
+<%=link_to "Back" , '/events'%>
