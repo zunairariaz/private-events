@@ -3,7 +3,9 @@
   <% @events.each do |event| %>
     <li>
       <%= link_to event.event_description , event_path(event) %> <%= event.event_date  %> 
-      <%=link_to "Attend" , user_path(@user)%>
+      <%= button_to "Attend", attend_path(event_id: event.id) %>
+
+
     </li>
   <%end %>
   </br></br></br>

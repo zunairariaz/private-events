@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/attendent', to: 'events#show'
-  get '/attend', to: 'users#show'
+  post '/attend', to: 'events#attend', as: 'attend'
 
 resources :users
-resources :events
+resources :events 
 
 
 end
 
 
+#do
+#post :attend, on: :member 
+#end

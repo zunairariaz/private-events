@@ -4,8 +4,6 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:user_name)
 	end
 
-
-
 	def index
 		@users=User.all
 	end

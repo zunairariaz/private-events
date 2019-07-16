@@ -3,6 +3,7 @@ include EventsHelper
 	def index
 		@events= Event.all
 		@user = User.find(session[:id])
+
 	end
 
 	
@@ -12,11 +13,17 @@ include EventsHelper
 	end
 
 
-	def create
+	def create		
 		@user=User.find(session[:id])
-    	@event=@user.events.build(event_params)
+    @event=@user.events.build(event_params)
+    	if @event.event_date.blank? || @event.event_description.blank? 
+    	flash.now.notice = "Both fields must be filled"
+    	render :new
+
+    	else
     	@event.save
-		redirect_to events_path
+			redirect_to events_path
+			end
 	end
 
 	
@@ -27,9 +34,9 @@ include EventsHelper
 	end
 
 	def attend
-		puts "Attend function inside"
-		@event=Event.find(params[:attended_event_id])
-    @attendent= @event.event_attendings.new(attendent_id: params[:id])
+		@event=Event.find(params[:event_id])
+    @attendent= @event.event_attendings.find_or_create_by(attendent_id: session[:id])
     @attendent.save
+    redirect_to events_path
 	end
 end
