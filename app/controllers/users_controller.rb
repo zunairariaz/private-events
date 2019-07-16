@@ -17,8 +17,11 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		@user.save
-		redirect_to "/login"	
+		if @user.save
+		redirect_to "/login"
+		else
+		render :new	
+		end
 	end
 	 
 	 def show

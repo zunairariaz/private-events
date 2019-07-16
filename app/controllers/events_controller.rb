@@ -21,11 +21,13 @@ include EventsHelper
 
 	
 	def show
+		@user=User.find(session[:id])
 		@event=Event.find(params[:id])
 		@attendents=@event.attendents
 	end
 
-	def event_attend
+	def attend
+		puts "Attend function inside"
 		@event=Event.find(params[:attended_event_id])
         @attendent= @event.event_attendings.new(attendent_id: params[:id])
         @attendent.save
