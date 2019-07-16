@@ -4,7 +4,9 @@
 <ul>
 	<li>  <%=link_to "Add an Event" , new_event_path %>  </li>
 	<li>  <%=link_to "Show All Events" , events_path %>  </li>
-	<li> <%=link_to "Logout", "/login" %> </li>
+	<% if session[:id] != nil %>
+  <li> <%=link_to "Logout", "/logout" , method: :DELETE %> </li>
+  <%end%>
 </ul>
 
 <h2> List of all events created by this user is: </h2>

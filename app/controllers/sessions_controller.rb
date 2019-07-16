@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 			log_in @user
 			redirect_to @user
 		else
-			flash[:error] = "User does not exist!"
+			flash.notice = "User does not exist!"
 			redirect_to "/signup"
 		end
 	end
@@ -19,6 +19,6 @@ class SessionsController < ApplicationController
 	def destroy
 		session[:user_name] = nil         
     session[:id] = nil
-    redirect_to users_path
+    redirect_to "/login"
 	end
 end
