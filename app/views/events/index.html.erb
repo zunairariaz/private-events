@@ -1,16 +1,11 @@
 <h1> List of all Events is:  </h1>
-
 <ul >
   <% @events.each do |event| %>
     <li>
       <%= link_to event.event_description , event_path(event) %> <%= event.event_date  %> 
       <%=link_to "Attend" , user_path(@user)%>
     </li>
-<%end %>
-
-</br></br></br>
-
-    <%=link_to "Back" , user_path(@user)%>
-
-
+  <%end %>
+  </br></br></br>
+  <%=link_to "Back" , user_path(@user)%>
 </ul>

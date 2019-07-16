@@ -1,21 +1,11 @@
 <h1>  <center> Show Page  </center> 
 <%= @user.user_name%>
 </h1> </center>
-
 <ul>
 	<li>  <%=link_to "Add an Event" , new_event_path %>  </li>
 	<li>  <%=link_to "Show All Events" , events_path %>  </li>
 	<li> <%=link_to "Logout", "/login" %> </li>
 </ul>
-
-
-
-
-
-
-
-
-
 
 <h2> List of all events created by this user is: </h2>
 
@@ -27,7 +17,6 @@
   <% end %>
 </ul>
  
-
  <h2> List of all events this user is going to attend: </h2>
 
 <ul >
@@ -38,9 +27,7 @@
   <% end %>
 </ul>
 
-
- <h2> Past Events attended by user: </h2> 
-
+<h2> Past Events attended by user: </h2> 
 <ul >
   <% @past_events.each do |event| %>
 	<li>
@@ -49,8 +36,7 @@
   <% end %>
 </ul>
 
-
- <h2> UpComing Events user is going to attend: </h2>
+<h2> UpComing Events user is going to attend: </h2>
 <ul >
   <% @upcoming_events.each do |event| %>
    <li>
@@ -59,9 +45,7 @@
   <% end %>
 </ul>
 
-
- <h2>All Past Events: </h2>
-
+<h2>All Past Events: </h2>
 <ul >
   <% @past_events_all.each do |event| %>
 	<li>
@@ -69,7 +53,6 @@
     </li>
   <% end %>
 </ul>
-
 
 <h2>All UpComing Events: </h2>
 <ul >
@@ -79,8 +62,4 @@
     </li>
   <% end %>
 </ul>
-
-
 </br>
- 
-
