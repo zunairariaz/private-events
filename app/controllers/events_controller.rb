@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
-include EventsHelper
-
-	before_action :check_authentication, only: [:new, :index, :show, :create]
+  
+  def event_params
+  params.require(:event).permit( :event_description, :event_date)
+  end
+	
+  before_action :check_authentication, only: [:new, :index, :show, :create]
 
 	def index
 		@events= Event.all

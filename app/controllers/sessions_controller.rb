@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
 
-	include SessionsHelper
+	def log_in(user)
+    session[:id] = user.id
+	end
+	
 	def new
 	end
 
