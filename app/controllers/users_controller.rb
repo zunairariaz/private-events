@@ -6,6 +6,10 @@ class UsersController < ApplicationController
 
 	def index
 		@users=User.all
+		respond_to do |format|
+      format.html # index.html.erb
+			format.json { render :json => @users }
+    end
 	end
 
 	def new
@@ -15,18 +19,23 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-		redirect_to "/login"
+		redirect_to login_path
 		else
 		render :new	
 		end
 	end
 	 
-	 def show
+	def show
 	 	@user = User.find(params[:id])
 	 	@events=Event.all
 		@upcoming_events_all = @events.upcoming
     @past_events_all = @events.past	
     @upcoming_events =  @user.attended_events.upcoming
     @past_events = @user.attended_events.past	
-	 end
+	 	
+	 	respond_to do |format|
+      format.html # index.html.erb
+			format.json { render :json => @user }
+    end
+	end
 end

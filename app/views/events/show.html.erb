@@ -1,12 +1,10 @@
 <h1> Here is the list of all attendents </h1>
 <p>
-	<%= @event.event_description %>
-	<ul >
-    <%@attendents.each do |attendent| %>
-    <li>
-      <%= attendent.user_name  %>
-    </li>
-    <% end %>
-	</ul>
+<%= @event.event_description %>
+<ul>
+  <%@attendents.each do |attendent| %>
+  <li> <%= attendent.user_name %> </li>
+  <% end %>
+</ul>
 </p> </br></br></br>
-<%=link_to "Back" , '/events'%>
+<%= link_to "Back", events_path %>
